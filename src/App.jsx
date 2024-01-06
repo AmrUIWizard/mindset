@@ -1,12 +1,15 @@
-import Navbar from "./components/Navbar";
-import PostCard from "./components/PostCard";
-import Posts from "./components/Posts";
-
+import { Route, Routes } from "react-router";
+import { Navbar, Posts, Login, Register } from "./components";
 function App() {
   return (
     <>
-      <Navbar />
-      <Posts />
+      <Routes>
+        <Route path="/" element={<Navbar />}>
+          <Route index element={<Posts />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+        </Route>
+      </Routes>
     </>
   );
 }
