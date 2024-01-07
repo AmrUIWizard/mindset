@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router";
-import { Navbar, Posts, Login, Register } from "./components";
+import { Navbar, Posts, Login, Register } from "./routes";
 function App() {
   return (
     <>

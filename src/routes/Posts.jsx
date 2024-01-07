@@ -1,7 +1,7 @@
 import { styles } from "../styles";
 import { posts } from "../posts";
 
-import PostCard from "./PostCard";
+import PostCard from "../components/PostCard";
 
 const Posts = () => {
   return (
