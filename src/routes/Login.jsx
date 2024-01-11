@@ -30,7 +30,13 @@ const Login = () => {
 
   const onSignSubmit = async (event) => {
     event.preventDefault();
-    resetFormFields();
+    // resetFormFields();
+
+    await fetch("http://localhost:3000/login", {
+      method: "POST",
+      body: JSON.stringify(formFields),
+      headers: { "Content-Type": "application/json" },
+    });
   };
 
   return (

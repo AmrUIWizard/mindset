@@ -6,7 +6,7 @@ const PostCard = ({ title, subtitle, img, author, publishDate }) => {
       <div className="sm:px-6 max-sm:py-4">
         <div className="font-bold text-xl mb-2">{title}</div>
         <div className="flex gap-3 mb-2 text-sm text-gray-500">
-          <p>{author}</p>
+          <p>{author} |</p>
           <p>{publishDate}</p>
         </div>
 

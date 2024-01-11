@@ -6,12 +6,11 @@ const defaultFormFields = {
   name: "",
   email: "",
   password: "",
-  confirmPassword: "",
 };
 
 const Register = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
-  const { name, email, password, confirmPassword } = formFields;
+  const { name, email, password } = formFields;
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -22,9 +21,12 @@ const Register = () => {
 
   const onRegisterSubmit = async (event) => {
     event.preventDefault();
-    if (password === confirmPassword) {
-      alert("Unmatched password");
-    }
+
+    await fetch("http://localhost:3000/register", {
+      method: "POST",
+      body: JSON.stringify(formFields),
+      headers: { "Content-Type": "application/json" },
+    });
   };
 
   return (
@@ -42,6 +44,7 @@ const Register = () => {
               label="Username"
               type="text"
               name="name"
+              placeholder="Enter Your Name"
               value={name}
               onChange={handleChange}
               required
@@ -51,6 +54,7 @@ const Register = () => {
               label="Email adress"
               type="email"
               name="email"
+              placeholder="Enter Your Email"
               value={email}
               onChange={handleChange}
               required
@@ -60,22 +64,15 @@ const Register = () => {
               label="Password"
               type="password"
               name="password"
+              placeholder="Enter Your Password"
               value={password}
-              onChange={handleChange}
-              required
-            />
-
-            <FormInput
-              label="Confirm Password"
-              type="password"
-              name="confirmPassword"
-              value={confirmPassword}
               onChange={handleChange}
               required
             />
 
             <div>
               <button
+                onClick={onRegisterSubmit}
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-[#bc8628] hover:bg-[#a8751d] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition duration-300 ease-in-out"
               >
