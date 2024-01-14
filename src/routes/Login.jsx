@@ -1,5 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState, useContext } from "react";
+import { Link, Navigate } from "react-router-dom";
+import { useState } from "react";
 import FormInput from "../components/FormInput";
 
 const defaultFormFields = {
@@ -10,6 +10,7 @@ const defaultFormFields = {
 const Login = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
+  const [redirect, setRedirect] = useState(false);
 
   // const loadedUser = (data) =>
   //   setLoadUser({
@@ -17,10 +18,6 @@ const Login = () => {
   //     name: data.name,
   //     entries: data.entries,
   //   });
-
-  const resetFormFields = () => {
-    setFormFields(defaultFormFields);
-  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -30,15 +27,22 @@ const Login = () => {
 
   const onSignSubmit = async (event) => {
     event.preventDefault();
-    // resetFormFields();
-
-    await fetch("http://localhost:3000/login", {
+    const response = await fetch("http://localhost:3000/login", {
       method: "POST",
       body: JSON.stringify(formFields),
       headers: { "Content-Type": "application/json" },
+      credentials: "include",
     });
+    if (response.ok) {
+      setRedirect(true);
+    } else {
+      alert("Wrong email or password");
+    }
   };
 
+  if (redirect) {
+    return <Navigate to={"/"} />;
+  }
   return (
     <div className="flex flex-1 flex-col justify-center translate-y-1/3 lg:px-8 px-6 shadow-xl max-w-md m-auto mx-auto">
       <div className="bg-gray-900 rounded-lg px-6 py-12">

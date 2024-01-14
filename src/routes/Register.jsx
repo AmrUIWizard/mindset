@@ -21,12 +21,16 @@ const Register = () => {
 
   const onRegisterSubmit = async (event) => {
     event.preventDefault();
-
-    await fetch("http://localhost:3000/register", {
+    const response = await fetch("http://localhost:3000/register", {
       method: "POST",
       body: JSON.stringify(formFields),
       headers: { "Content-Type": "application/json" },
     });
+    if (response.status === 200) {
+      alert("Registration successful");
+    } else {
+      alert("Registerion faild");
+    }
   };
 
   return (
