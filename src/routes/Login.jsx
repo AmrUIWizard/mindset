@@ -1,6 +1,8 @@
 import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import FormInput from "../components/FormInput";
+import { useDispatch } from "react-redux";
+import { setUserName } from "../state/user/userSlice";
 
 const defaultFormFields = {
   email: "",
@@ -8,6 +10,7 @@ const defaultFormFields = {
 };
 
 const Login = () => {
+  const dispatch = useDispatch();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
   const [redirect, setRedirect] = useState(false);
@@ -34,7 +37,10 @@ const Login = () => {
       credentials: "include",
     });
     if (response.ok) {
-      setRedirect(true);
+      response.json().then((userInfo) => {
+        dispatch(setUserName(userInfo.name));
+        setRedirect(true);
+      });
     } else {
       alert("Wrong email or password");
     }
