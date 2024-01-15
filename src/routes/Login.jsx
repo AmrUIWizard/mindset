@@ -1,8 +1,8 @@
 import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
-import FormInput from "../components/FormInput";
 import { useDispatch } from "react-redux";
 import { setUserName } from "../state/user/userSlice";
+import { Button, FormInput } from "../components";
 
 const defaultFormFields = {
   email: "",
@@ -51,7 +51,7 @@ const Login = () => {
   }
   return (
     <div className="flex flex-1 flex-col justify-center translate-y-1/3 lg:px-8 px-6 shadow-xl max-w-md m-auto mx-auto">
-      <div className="bg-gray-900 rounded-lg px-6 py-12">
+      <div className="border-[#a8751d] border-2 rounded-2xl px-6 py-12 bg-primary">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-100">
             Sign in to your account
@@ -79,12 +79,7 @@ const Login = () => {
             />
 
             <div>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-[#bc8628] hover:bg-[#a8751d] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition duration-300 ease-in-out"
-              >
-                Sign in
-              </button>
+              <Button value="Sign in" />
             </div>
           </form>
 

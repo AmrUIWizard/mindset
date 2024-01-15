@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import FormInput from "../components/FormInput";
+import { Button, FormInput } from "../components";
 
 const defaultFormFields = {
   name: "",
@@ -35,7 +35,7 @@ const Register = () => {
 
   return (
     <div className="flex flex-1 flex-col justify-center mt-12 px-6 lg:px-8 shadow-xl max-w-md m-auto ">
-      <div className="bg-gray-900 rounded-lg p-6">
+      <div className="bg-primary border-[#a8751d] border-2 rounded-2xl p-6">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm px-6 py-6">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-100">
             Register a new account
@@ -75,13 +75,7 @@ const Register = () => {
             />
 
             <div>
-              <button
-                onClick={onRegisterSubmit}
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-[#bc8628] hover:bg-[#a8751d] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition duration-300 ease-in-out"
-              >
-                Rigster
-              </button>
+              <Button value="Register" />
             </div>
           </form>
 

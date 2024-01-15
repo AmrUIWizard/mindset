@@ -15,11 +15,17 @@ const UserMode = () => {
 
   return (
     <>
-      <Link to="/login">
-        <li className="cursor-pointer hover:text-[#eaa327]"> New Post</li>
+      <Link to={`/newpost`}>
+        <li className="cursor-pointer hover:text-[var(--primary-color)]">
+          {" "}
+          New Post
+        </li>
       </Link>
 
-      <li onClick={logout} className="cursor-pointer hover:text-[#eaa327]">
+      <li
+        onClick={logout}
+        className="cursor-pointer hover:text-[var(--primary-color)]"
+      >
         {" "}
         Logout
       </li>

@@ -4,10 +4,16 @@ const GuestMode = () => {
   return (
     <>
       <Link to="/login">
-        <li className="cursor-pointer hover:text-[#eaa327]"> Login</li>
+        <li className="cursor-pointer hover:text-[var(--primary-color)]">
+          {" "}
+          Login
+        </li>
       </Link>
       <Link to="/register">
-        <li className="cursor-pointer hover:text-[#eaa327]"> Register</li>
+        <li className="cursor-pointer hover:text-[var(--primary-color)]">
+          {" "}
+          Register
+        </li>
       </Link>
     </>
   );

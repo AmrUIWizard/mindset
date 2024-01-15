@@ -12,6 +12,15 @@
   color-scheme: dark;
 }
 
+:root {
+  --primary-color: #bc8628;
+}
+
+.bg-primary {
+  background-color: #060f1e;
+  background-image: linear-gradient(315deg, #060f1e 0%, #0f0f0f 65%);
+}
+
 .code-font {
   font-family: "Encode Sans Expanded", sans-serif;
 }

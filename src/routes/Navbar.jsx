@@ -38,7 +38,7 @@ const Navbar = () => {
           </Link>
 
           <ul className="list-none flex gap-6 items-center">
-            <li className="flex items-center justify-center gap-2 border-2 py-1 px-5 rounded-2xl border-[#eaa327] min-w-32">
+            <li className="flex items-center justify-center gap-2 border-2 py-1 px-5 rounded-2xl border-[var(--primary-color)] min-w-32">
               <FaUser />
               <span> {userName ? userName : "Guest"}</span>
             </li>
