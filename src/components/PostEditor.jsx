@@ -11,7 +11,7 @@ const PostEditor = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-[430px]">
       <label className="code-font block text-md leading-6 text-white mb-1">
         Post
       </label>
@@ -22,9 +22,9 @@ const PostEditor = () => {
           skin: "oxide-dark",
           content_css: "dark",
           plugins:
-            " mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss",
+            "codesample mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss",
           toolbar:
-            "undo redo | bold italic underline strikethrough | blocks | link image table | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
+            "undo redo | bold italic underline strikethrough |codesample | blocks | link image table | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
           tinycomments_mode: "embedded",
           tinycomments_author: "Author name",
           mergetags_list: [
@@ -36,7 +36,7 @@ const PostEditor = () => {
               Promise.reject("See docs to implement AI Assistant")
             ),
         }}
-        initialValue="Welcome to TinyMCE!"
+        initialValue="Your post content here"
       />
     </div>
   );

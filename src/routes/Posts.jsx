@@ -1,9 +1,17 @@
 import { styles } from "../styles";
-import { posts } from "../posts";
 
 import PostCard from "../components/PostCard";
+import { useEffect, useState } from "react";
 
 const Posts = () => {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/post").then((response) => {
+      response.json().then((posts) => {
+        setPosts(posts);
+      });
+    });
+  }, []);
   return (
     <div className={`${styles.paddingX}`}>
       <div className=" max-w-7xl mx-auto">

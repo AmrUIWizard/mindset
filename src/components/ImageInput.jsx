@@ -5,8 +5,7 @@ const ImageInput = ({ ...otherProps }) => {
   const dispatch = useDispatch();
 
   const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    dispatch(setImageUrl(file));
+    dispatch(setImageUrl(event.target.files));
   };
 
   return (
