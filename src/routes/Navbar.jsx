@@ -20,7 +20,6 @@ const Navbar = () => {
       });
     });
   });
-  console.log(userName);
   return (
     <>
       <nav className={`${styles.paddingX} w-full flex items-center py-5 `}>
