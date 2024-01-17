@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setDescription } from "../state/post/postSlice";
+import { setDescription } from "../../state/post/postSlice";
 
 const TextArea = ({ label, ...otherProps }) => {
   const dispatch = useDispatch();

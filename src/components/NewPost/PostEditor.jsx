@@ -1,7 +1,7 @@
 import { Editor } from "@tinymce/tinymce-react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setEditorValue } from "../state/post/postSlice";
+import { setEditorValue } from "../../state/post/postSlice";
 
 const PostEditor = () => {
   const dispatch = useDispatch();

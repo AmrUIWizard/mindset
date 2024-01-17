@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setImageUrl } from "../state/post/postSlice";
+import { setImageUrl } from "../../state/post/postSlice";
 
 const ImageInput = ({ ...otherProps }) => {
   const dispatch = useDispatch();

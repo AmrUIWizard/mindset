@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setUserName } from "../state/user/userSlice";
+import { setUserName } from "../../state/user/userSlice";
 
 const UserMode = () => {
   const dispatch = useDispatch();

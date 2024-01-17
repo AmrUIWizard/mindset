@@ -1,6 +1,6 @@
 import { styles } from "../styles";
 
-import PostCard from "../components/PostCard";
+import PostCard from "../components/Posts/PostCard";
 import { useEffect, useState } from "react";
 
 const Posts = () => {
@@ -19,7 +19,7 @@ const Posts = () => {
         <hr className="mb-8" />
         <div>
           {posts.map((post) => {
-            return <PostCard key={post.title} {...post} />;
+            return <PostCard key={post._id} {...post} />;
           })}
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router";
-import { Navbar, Posts, Login, Register, NewPost } from "./routes";
+import { Navbar, Posts, Login, Register, NewPost, PostPage } from "./routes";
+
 function App() {
   return (
     <div className="bg-primary min-h-screen">
@@ -9,6 +10,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="newpost" element={<NewPost />} />
+          <Route path="/post/:id" element={<PostPage />} />
         </Route>
       </Routes>
     </div>
