@@ -12,7 +12,6 @@ const UserMode = () => {
     });
     dispatch(setUserName(null));
   };
-
   return (
     <>
       <Link to={`/newpost`}>
