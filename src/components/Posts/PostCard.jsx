@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 const PostCard = ({ _id, title, description, imageUrl, author, createdAt }) => {
   return (
-    <div className="max-w-3xl rounded overflow-hidden shadow-lg flex gap-5 mt-8 max-sm:flex-col max-sm:items-center ">
-      <Link to={`/post/${title}-${_id}`}>
-        <div className="h-60 flex items-center justify-center">
+    <div className="bg-primary max-w-3xl rounded-xl overflow-hidden shadow-lg flex gap-5 mt-8 max-sm:flex-col max-sm:items-center min-w-full border-[1px] border-[var(--primary-color)] p-4">
+      <Link to={`/post/${_id}`}>
+        <div className=" flex items-center justify-center w-60 h-60">
           <img
-            className="w-full max-w-60 rounded-md"
-            src={"http://localhost:3000/" + imageUrl}
+            className=" max-w-60 max-h-60 rounded-md"
+            src={`${import.meta.env.VITE_HOSTING_URL}/${imageUrl}`}
             alt="Post Image"
           />
         </div>

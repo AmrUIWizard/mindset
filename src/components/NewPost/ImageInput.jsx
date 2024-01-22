@@ -19,6 +19,7 @@ const ImageInput = ({ ...otherProps }) => {
       <input
         onChange={handleFileChange}
         {...otherProps}
+        required
         type="file"
         className="relative bg-[#222f3e] m-0 block w-full min-w-0 flex-auto rounded  ring-gray-300 ring-1 bg-clip-padding px-3 py-[0.32rem] text-base font-normal transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:px-3 file:py-[0.32rem]  file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-[color:var(--primary-color)] focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-white dark:file:bg-neutral-700 dark:file:text-neutral-100 dark:focus:border-primary cursor-pointer"
       />

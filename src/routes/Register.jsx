@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, FormInput } from "../components";
 
 const defaultFormFields = {
@@ -9,6 +9,7 @@ const defaultFormFields = {
 };
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { name, email, password } = formFields;
 
@@ -21,20 +22,24 @@ const Register = () => {
 
   const onRegisterSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch("http://localhost:3000/register", {
-      method: "POST",
-      body: JSON.stringify(formFields),
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await fetch(
+      `${import.meta.env.VITE_HOSTING_URL}/register`,
+      {
+        method: "POST",
+        body: JSON.stringify(formFields),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     if (response.status === 200) {
-      alert("Registration successful");
+      alert("Registration successful, Go to signin page");
+      navigate("/login");
     } else {
       alert("Registerion faild");
     }
   };
 
   return (
-    <div className="flex flex-1 flex-col justify-center mt-12 px-6 lg:px-8 shadow-xl max-w-md m-auto ">
+    <div className="flex flex-1 flex-col justify-center mt-12 px-6 lg:px-8 shadow-xl max-w-md m-auto mb-16">
       <div className="bg-primary border-[#a8751d] border-2 rounded-2xl p-6">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm px-6 py-6">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-100">

@@ -3,7 +3,7 @@ import { Navbar, Posts, Login, Register, NewPost, PostPage } from "./routes";
 
 function App() {
   return (
-    <div className="bg-primary min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Routes>
         <Route path="/" element={<Navbar />}>
           <Route index element={<Posts />} />

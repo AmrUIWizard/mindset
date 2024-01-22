@@ -1,19 +1,18 @@
 import { Editor } from "@tinymce/tinymce-react";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setEditorValue } from "../../state/post/postSlice";
 
 const PostEditor = () => {
   const dispatch = useDispatch();
 
-  const handleEditorChange = (content, editor) => {
+  const handleEditorChange = (content) => {
     dispatch(setEditorValue(content));
   };
 
   return (
     <div className="min-h-[430px]">
       <label className="code-font block text-md leading-6 text-white mb-1">
-        Post
+        Content
       </label>
       <Editor
         apiKey="raub75ckbzvrwtdf132p0y8ic5d548gzpyopf9kmwmrkg9sx"

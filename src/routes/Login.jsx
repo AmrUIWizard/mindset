@@ -30,7 +30,7 @@ const Login = () => {
 
   const onSignSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch("http://localhost:3000/login", {
+    const response = await fetch(`${import.meta.env.VITE_HOSTING_URL}/login`, {
       method: "POST",
       body: JSON.stringify(formFields),
       headers: { "Content-Type": "application/json" },
@@ -50,9 +50,9 @@ const Login = () => {
     return <Navigate to={"/"} />;
   }
   return (
-    <div className="flex flex-1 flex-col justify-center translate-y-1/3 lg:px-8 px-6 shadow-xl max-w-md m-auto mx-auto">
-      <div className="border-[#a8751d] border-2 rounded-2xl px-6 py-12 bg-primary">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+    <div className="flex flex-1 flex-col justify-center mt-12 px-6 lg:px-8 shadow-xl max-w-md m-auto mb-16">
+      <div className="bg-primary border-[#a8751d] border-2 rounded-2xl p-6">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm px-6 py-6">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-100">
             Sign in to your account
           </h2>

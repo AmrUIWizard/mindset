@@ -6,7 +6,7 @@ const UserMode = () => {
   const dispatch = useDispatch();
 
   const logout = () => {
-    fetch("http://localhost:3000/logout", {
+    fetch(`${import.meta.env.VITE_HOSTING_URL}/logout`, {
       credentials: "include",
       method: "POST",
     });

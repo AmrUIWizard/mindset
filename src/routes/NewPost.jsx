@@ -26,7 +26,7 @@ const NewPost = () => {
     data.set("description", description);
     data.set("editorValue", editorValue);
     data.set("imageUrl", imageUrl[0]);
-    const response = await fetch("http://localhost:3000/post", {
+    const response = await fetch(`${import.meta.env.VITE_HOSTING_URL}/post`, {
       method: "POST",
       body: data,
       credentials: "include",
@@ -43,8 +43,13 @@ const NewPost = () => {
     <div className={`${styles.paddingX} w-full py-5`}>
       <div className="max-w-7xl mx-auto ">
         <form className="flex flex-col gap-5" onSubmit={createNewPost}>
-          <FormInput type="text" label="Title" onChange={handleTitleChange} />
-          <TextArea label="Description" />
+          <FormInput
+            type="text"
+            label="Title"
+            onChange={handleTitleChange}
+            required
+          />
+          <TextArea label="Description" required />
           <ImageInput />
           <PostEditor />
           <Button value="Create Post" />
