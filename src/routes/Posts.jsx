@@ -17,7 +17,7 @@ const Posts = () => {
   return (
     <div className={`${styles.paddingX}`}>
       <div className=" max-w-7xl mx-auto w-full mb-16">
-        <h1 className="max-w-4xl mt-20 max-md:mt-12 mb-32 max-md:mb-24 text-7xl max-md:text-5xl font-bold ">
+        <h1 className="max-w-4xl mt-20 max-md:mt-12 mb-32 max-md:mb-24 text-7xl max-md:text-5xl font-bold">
           Elevate your{" "}
           <span className="text-[var(--primary-color)]"> Mindset </span> with
           empowering thoughts and{" "}
