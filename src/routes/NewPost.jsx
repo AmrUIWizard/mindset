@@ -5,6 +5,7 @@ import { PostEditor, TextArea, Button, ImageInput } from "../components";
 import { setTitle } from "../state/post/postSlice";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
+import errorImage from "../assets/error.png";
 
 const NewPost = () => {
   const dispatch = useDispatch();
@@ -52,8 +53,15 @@ const NewPost = () => {
           <TextArea label="Description" required />
           <ImageInput />
           <PostEditor />
-          <Button value="Create Post" />
+          <Button value="Create Post" disabled />
         </form>
+        <div className="flex items-center gap-2 text-red-600 mt-2">
+          <img src={errorImage} alt="errorImage" width={25} height={25} />
+          <p>
+            Regrettably, we are unable to generate posts due to a subscription
+            limit associated with the TinyMCE editor.
+          </p>
+        </div>
       </div>
     </div>
   );

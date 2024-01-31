@@ -39,8 +39,8 @@ const Register = () => {
   };
 
   return (
-    <div className="flex flex-1 flex-col justify-center mt-12 px-6 lg:px-8 shadow-xl max-w-md m-auto mb-16">
-      <div className="bg-primary border-[#a8751d] border-2 rounded-2xl p-6">
+    <div className="flex flex-1 flex-col justify-center mt-12 lg:px-8 shadow-xl max-w-xl m-auto mb-16">
+      <div className="bg-primary border-[#a8751d] border-2 rounded-2xl p-4 max-md:w-auto w-[450px]">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm px-6 py-6">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-100">
             Register a new account
